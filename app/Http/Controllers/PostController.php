@@ -19,12 +19,14 @@ class PostController extends Controller
   public function store(Request $request) {
     $request->validate([
       'title' => 'required|max:100',
-      'text' => 'required'
+      'content' => 'required'
     ]);
 
     $post = new Post;
     $post->title = $request->input('title');
     $post->content = $request->input('content');
     $post->save();
+
+    return redirect()->route('posts.index')->with('message', '投稿が追加されました');
   }
 }
