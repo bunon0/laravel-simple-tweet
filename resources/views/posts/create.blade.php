@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', '新規投稿 | 投稿アプリ')
+@section('title', '新規投稿 | ' . config('app.name'))
 
-@section('main-content')
+@section('mainContent')
   <h2>新規投稿</h2>
   <div>
     @if ($errors->any())

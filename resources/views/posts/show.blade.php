@@ -2,7 +2,7 @@
 
 @section('title', '投稿詳細 | 投稿アプリ')
 
-@section('main-content')
+@section('mainContent')
   <h2>投稿詳細</h2>
   <a href="{{ route('posts.index') }}" class="btn btn-link">&lt;戻る</a>
   <div class="card mt-3">
