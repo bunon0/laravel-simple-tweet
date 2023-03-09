@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="h-100">
 
 <head>
   <meta charset="UTF-8">
@@ -9,12 +9,12 @@
   @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
   @include('layouts.header')
 
-  <main class="py-4 bg-light">
+  <main class="py-4 bg-light flex-shrink-0">
     <div class="container ">
-      @yield('main-content')
+      @yield('mainContent')
     </div>
   </main>
 
