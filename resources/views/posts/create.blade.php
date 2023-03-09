@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '投稿ページ | 投稿アプリ')
+@section('title', '新規投稿 | 投稿アプリ')
 
 @section('main-content')
   <h2>新規投稿</h2>

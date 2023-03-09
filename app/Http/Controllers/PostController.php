@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
   public function index() {
-    $articleList = Post::all();
-    return view('posts.index', ['articleList' => $articleList]);
+    $postList = Post::all();
+    return view('posts.index', ['postList' => $postList]);
   }
 
   public function create() {
@@ -28,5 +28,9 @@ class PostController extends Controller
     $post->save();
 
     return redirect()->route('posts.index')->with('message', '投稿が追加されました');
+  }
+
+  public function show(Post $post) {
+    return view('posts.show', compact('post'));
   }
 }
