@@ -9,8 +9,14 @@
     <div class="card-body">
       <h5 class="card-title">{{ $post->title }}</h5>
       <p class="card-text">{{ $post->content }}</p>
-      <a href="#" class="btn btn-outline-primary ms-1">編集</a>
-      <a href="#" class="btn btn-outline-danger ms-1">削除</a>
+      <div class="d-flex">
+        <a href="{{ route('posts.edit', $post) }}" class="btn btn-outline-primary ms-1">編集</a>
+        <form action="{{ route('posts.destroy', $post) }}" method="post">
+          @method('DELETE')
+          @csrf
+          <button type="submit" class="btn btn-outline-danger ms-1">削除</button>
+        </form>
+      </div>
     </div>
   </div>
 @endsection

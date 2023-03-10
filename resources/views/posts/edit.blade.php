@@ -4,6 +4,7 @@
 
 @section('mainContent')
   <h2>投稿編集</h2>
+  <a href="{{ route('posts.index') }}" class="btn btn-link">&lt;戻る</a>
   <div>
     @if ($errors->any())
       <div class="alert alert-danger">

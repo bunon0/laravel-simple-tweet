@@ -38,7 +38,6 @@ class PostController extends Controller
     return view('posts.edit', compact('post'));
   }
 
-
   public function update(Request $request, Post $post) {
     $request->validate([
       'title' => 'required|max:100',
@@ -50,5 +49,10 @@ class PostController extends Controller
     $post->save();
 
     return redirect()->route('posts.index')->with('message', '投稿が更新されました！');
+  }
+
+  public function destroy (Post $post){
+    $post->delete();
+    return redirect()->route('posts.index')->with('message', '投稿を1件削除しました！');
   }
 }
